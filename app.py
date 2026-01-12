@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, url_for, flash
+from flask import Flask, render_template, redirect, request, url_for, flash,send_from_directory
 import smtplib as s
 import os
 
@@ -37,9 +37,12 @@ def submit():
             return redirect(url_for("home"))
     return redirect(url_for("home"))
 
-
+@app.route('/sitemap.xml', methods=['GET'])
+def sitemap():
+    return send_from_directory('.', 'sitemap.xml', mimetype='application/xml')
 
 port = int(os.environ.get("PORT", 8080))
 app.run(debug=True,host="0.0.0.0", port=port)
+
 
 
