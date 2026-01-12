@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request, url_for, flash
 import smtplib as s
+import os
 
 app= Flask(__name__)
 app.secret_key="jeel1101"
@@ -38,5 +39,7 @@ def submit():
 
 
 
-app.run(debug=True,host="0.0.0.0",port=8000)
+port = int(os.environ.get("PORT", 8080))
+app.run(debug=True,host="0.0.0.0", port=port)
+
 
