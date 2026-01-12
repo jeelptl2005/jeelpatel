@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeel Patel - Portfolio</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav>
+        <div class="containers nav-container">
+            <h2 class="logo"><span><i class="fa-solid fa-code"></i></span>JEEL.</h2>
+            <ul class="nav-menu">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#project">PROJECT</a></li>
+                <li><a href="#service">SERVICES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <div class="icon"><i class="fa-solid fa-bars"></i></div>
+        </div>
+    </nav>
+
+
+    <!-- -------------------- Hero Section -------------------- -->
+    <section id="home">
+        <div class="container home-container">
+            <div class="hero-left">
+                <h1 class="fade-in-up">Hello</h1>
+                <h3 class="fade-in-up delay-1">I am from INDIA.</h3>
+
+                <p class="fade-in-up delay-2 quote">
+                    "Solving problems, designing solutions, delivering results — this is my passion."
+                </p>
+
+                <p class="fade-in-up delay-3">
+                    Currently, I am pursuing my Bachelor's degree in Computer Science and Engineering at Parul University.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="cta-buttons fade-in-up delay-4">
+                    <a href="#project" class="cta-btn primary">View My Work</a>
+                    <a href="#contact" class="cta-btn secondary">Get In Touch</a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="social-links fade-in-up delay-5">
+                    <a href="www.github.com/jeelptl2005" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jeel1101?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://x.com/s22cpjeel107" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/jeelptl._11?igsh=MWxjeXRtOHJlb28wNw==" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-right fade-in-up delay-2">
+                <div class="profile-image-wrapper">
+                    <img src="{{ url_for('static', filename='jeel2.jpg') }}" alt="Jeel Patel - Portfolio">
+                </div>
+                <h2>Jeel Patel</h2>
+                <div class="line"></div>
+                <span>FULL-STACK DEVELOPER</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- -------------------- About Section -------------------- -->
+    <section id="about">
+        <h1 class="heading">About Me</h1>
+        <div class="container about-container">
+            <div class="about-left">
+                <img src="{{ url_for('static', filename='about.jpg') }}" alt="About">
+            </div>
+            <div class="about-right">
+                <p>I want to be a Full Stack Developer with a strong passion for building complete, scalable, and user-friendly web applications. I enjoy working across the entire development lifecycle—from designing clean and responsive user interfaces to developing efficient back-end logic and managing databases.</p>
+                
+                <p>I believe in writing clean, maintainable code and continuously improving my problem-solving skills. I am always eager to learn new technologies, frameworks, and best practices that help me grow as a developer and build better software. I focus on understanding how systems work as a whole rather than just individual components.</p>
+                
+                <p>My goal is to create meaningful digital solutions that solve real-world problems, provide value to users, and deliver reliable performance. I am motivated by challenges and see every project as an opportunity to learn, improve, and push my technical limits as an aspiring Full Stack Developer.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- -------------------- Projects Section -------------------- -->
+     <section id="project">
+        <h1 class="heading">My Work</h1>
+        <div class="container project-container">
+            <div class="project-card">
+                <img src="{{ url_for('static', filename='portfolio.jpg') }}" alt="Project 1">
+                <h3>My Portfolio</h3>
+                <p>Tech stack of this portfolio is HTML, CSS, JavaScript, and Python (Flask).</p>
+                <a href="{{url_for('home')}}" class="project-link">View Project <i class="fa-solid fa-share-from-square"></i></a>
+            </div>
+        </div>
+     </section>
+
+    <!-- -------------------- Service Section -------------------- -->
+    <section id="service">
+        <h1 class="heading">Services</h1>
+        <div class="container service-container">
+            <div class="service-card">
+                <i class="fa-solid fa-code service-icon"></i>
+                <h3>Web Development</h3>
+                <p>Building responsive and dynamic websites using modern web technologies.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-database service-icon"></i>
+                <h3>Backend Development</h3>
+                <p>Creating robust server-side applications and APIs for seamless data management.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- -------------------- Contact Section -------------------- -->
+    <section id="contact">
+        <h1 class="heading">Contact</h1>
+        <div class="container contact-container">
+            <div class="contact-left">
+                <h2>Get In Touch</h2>
+                <p>If you have any questions or would like to work together, feel free to reach out!</p>
+                <div class="contact-info">
+                    <p><i class="fa-solid fa-envelope"></i> jeelptl2005@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +919313464150</p>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form method="POST" action="/submit">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Flash Messages Container -->
+    {% if get_flashed_messages() %}
+    <div class="flash-container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <div class="flash-message flash-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endwith %}
+    </div>
+    {% endif %}
+
+    <!-- -------------------- Footer Section -------------------- -->
+    <footer>
+        <div class="foot">
+            <div class="icons"><i class="fa-regular fa-copyright"></i></div>
+            <p>2026 Jeel Patel. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
