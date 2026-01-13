@@ -41,8 +41,7 @@ def submit():
 def sitemap():
     return send_from_directory('.', 'sitemap.xml', mimetype='application/xml')
 
-port = int(os.environ.get("PORT", 8080))
-app.run(debug=True,host="0.0.0.0", port=port)
+
 
 
 
