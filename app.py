@@ -19,7 +19,7 @@ def submit():
         subject1= "New response"
         subject2= "Thank you for contacting Jeel Patel!"
         body1= f"""Subject: {subject1}\n\nYou received a new response from you Portfolio.\n\nName: {name}\nEmail: {email}\nMessage: {message}"""
-        body2= f"""Subject: {subject2}\n\nDear {name},\n\nThank you for reaching out through my portfolio website!\n\nI have received your message and will get back as soon as possible.\n\nBest regards,\nJEEL PATEL.\nFull-Stack Developer."""
+        body2= f"""Subject: {subject2}\n\nDear {name},\n\nThank you for reaching out through my portfolio website!\n\nI have received your message and will get back as soon as possible.\n\nBest regards,\nJEEL PATEL.\nB.Tech CSE Student."""
 
         FROM= os.getenv("GMAIL")
         PASSWORD= os.getenv("GMAIL_PASS")
@@ -40,6 +40,7 @@ def submit():
 @app.route('/sitemap.xml', methods=['GET'])
 def sitemap():
     return send_from_directory('.', 'sitemap.xml', mimetype='application/xml')
+
 
 
 
