@@ -1062,7 +1062,7 @@ body {
 }
 
 .form-group textarea {
-    resize: none;
+    resize: vertical;
     min-height: 120px;
 }
 
@@ -1253,5 +1253,25 @@ body {
     html {
         scroll-behavior: smooth;
     }
+}/* Fix for mobile menu toggle interfering with contact form */
+@media (max-width: 768px) {
+    /* When contact form is focused/active, disable menu toggle button */
+    body.form-active .mobile-menu-toggle {
+        pointer-events: none;
+        opacity: 0.3;
+    }
+    
+    /* Ensure contact section is above everything else when active */
+    .contact-section {
+        position: relative;
+        z-index: 10;
+    }
+    
+    /* Ensure form inputs are clickable */
+    .contact-form input,
+    .contact-form textarea {
+        position: relative;
+        z-index: 100;
+        touch-action: auto;
+    }
 }
-
