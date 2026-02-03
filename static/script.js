@@ -29,7 +29,7 @@ themeToggle.addEventListener('click', () => {
 });
 
 // ========================================
-// MOBILE MENU TOGGLE
+// MOBILE MENU TOGGLE - FIXED VERSION
 // ========================================
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const sidebar = document.getElementById('sidebar');
@@ -48,8 +48,41 @@ function toggleMobileMenu() {
     }
 }
 
-mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-mobileOverlay.addEventListener('click', toggleMobileMenu);
+// FIXED: Only respond to direct clicks on the button
+mobileMenuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    toggleMobileMenu();
+});
+
+// FIXED: Only close if clicking the overlay itself, and NOT when menu is closed
+mobileOverlay.addEventListener('click', (e) => {
+    // Only toggle if overlay is active (menu is open)
+    if (mobileOverlay.classList.contains('active') && e.target === mobileOverlay) {
+        toggleMobileMenu();
+    }
+});
+
+// CRITICAL FIX: Prevent overlay from intercepting clicks when menu is closed
+// Make overlay pointer-events none when inactive
+const overlayObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+            if (mobileOverlay.classList.contains('active')) {
+                mobileOverlay.style.pointerEvents = 'auto';
+            } else {
+                mobileOverlay.style.pointerEvents = 'none';
+            }
+        }
+    });
+});
+
+overlayObserver.observe(mobileOverlay, { attributes: true });
+
+// Set initial state
+if (!mobileOverlay.classList.contains('active')) {
+    mobileOverlay.style.pointerEvents = 'none';
+}
 
 // ========================================
 // SMOOTH SCROLLING & ACTIVE NAV
