@@ -1052,7 +1052,6 @@ body {
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
     transition: all var(--transition-fast);
-    resize: none;
 }
 
 .form-group input:focus,
@@ -1063,7 +1062,7 @@ body {
 }
 
 .form-group textarea {
-    resize: vertical;
+    resize: none;
     min-height: 120px;
 }
 
@@ -1276,4 +1275,5 @@ body {
         touch-action: auto;
     }
 }
+
 
