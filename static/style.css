@@ -709,7 +709,7 @@ body {
     font-size: 6rem;
     font-weight: 900;
     color: var(--accent-primary);
-    opacity: 0.1;
+    opacity: 0.5;
     font-family: 'Playfair Display', serif;
     line-height: 1;
     position: relative;
@@ -1275,5 +1275,6 @@ body {
         touch-action: auto;
     }
 }
+
 
 
