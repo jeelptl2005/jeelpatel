@@ -18,6 +18,9 @@ YOUR_EMAIL = os.getenv("GMAIL")
 def index():
     return render_template('index.html')
 
+@app.route('/sales')
+def sales():
+    return render_template('Sales.html')
 
 @app.route('/send-message', methods=['POST'])
 def send_message():
@@ -177,3 +180,4 @@ def send_message():
             'success': False,
             'message': 'Failed to send message. Please try again later.'
         }), 500
+
