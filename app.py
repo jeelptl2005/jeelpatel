@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify,send_from_directory
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -20,7 +20,7 @@ def index():
 
 @app.route('/sales')
 def sales():
-    return render_template('Sales.html')
+    return send_from_directory("static","Sales.html")
 
 @app.route('/send-message', methods=['POST'])
 def send_message():
@@ -180,4 +180,5 @@ def send_message():
             'success': False,
             'message': 'Failed to send message. Please try again later.'
         }), 500
+
 
